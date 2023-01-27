@@ -25,6 +25,47 @@
 </head>
 <body>
 
+    <!-- Header -->
+<header class="relative">
+
+    <!--Flex-box container-->
+    <div class="flex w-full bg-primaryCol items-center justify-start py-5 px-6">
+  
+      <!--logo-->
+      <div class="flex items-center space-x-2 md:space-x-4">
+        <img href="index.html" src="{% static 'img/favicon.ico' %}" alt="">
+        <h2 href="index.html" class="font-medium text-xl text-fiveCol md:text-2xl shadow">Student Records Manager</h2>
+      </div>
+  
+      <!--Desktop Navigation-->
+      <nav class="hidden items-center ml-6 pt-2 text-fourCol font-normal md:flex space-x-6">
+        <a class="hover:text-thirdCol transition-all" href="index.html">All student</a>
+        <a class="hover:text-thirdCol transition-all" href="#">Add student</a>
+      </nav>
+  
+      <!--Button-->
+      <a href="" class="absolute right-5 p-3 px-6 pt-2 text-primaryCol bg-fourCol rounded-lg baseline hover:bg-fiveCol transition-all duration-500 hidden md:block">
+        Add New
+      </a>
+  
+      <!--Hamburger Icon-->
+      <button id="menu-icon" class="hamburger block mt-4 md:hidden focus:outline-none">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+  
+    </div>
+  
+    <!--Mobile Navigation-->
+    <nav id="menu" class="absolute flex-col items-center hidden self-end py-8 mt-6 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+      <a class="hover:text-darkGrayBlue" href="">Pricing</a>
+      <a class="hover:text-darkGrayBlue" href="">Product</a>
+    </nav>
+  
+  </header>
+
+
     <div class="bg-gray-50 font-serif leading-normal tracking-normal">
 
         {% block body %}
@@ -32,6 +73,15 @@
         {% endblock %}
   
       </div>
+
+
+      <footer class="bg-blue-800 py-7">
+
+        <div class="flex justify-center items-center text-white">
+            Copyright &copy; 2022, All right reserved
+          </div>
+        
+      </footer>
 
 
           <!--JavScript Arena-->
