@@ -12,7 +12,7 @@
         <!--flex-box container-->
         <div class="container p-4">
 
-            {% comment %} check students {% endcomment %}
+             <!-- check students  -->
             {% if students %}
             <div class="card border border-gray-300">
                 
@@ -50,9 +50,53 @@
                             <td>{{ student.email }}</td>
                             <td>{{ student.course }}</td>
                             <td>{{ student.gpa }}</td>
-                            <td with="130">
-                                <a href="#" class="btn btn-secondary btn-small">Edit</a>
-                                <a href="#" class="btn btn-danger btn-delete btn-small">Delete</a>
+                            <td class="flex space-x-2 justify-between items-center">
+                                <button class="btn p-2 bg-primaryCol text-white" href="{% url 'view_student' student.id %}" data-modal-target="my-modal{{ student.id }}" data-modal-toggle="my-modal{{ student.id }}">
+                                    <i class="bx bx-search-alt"></i>View
+                                </button>
+
+                                <!-- Main modal -->
+                                    <div id="my-modal{{ student.id }}" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+                                        <div class="relative w-full h-full max-w-2xl md:h-auto">
+                                            <!-- Modal content -->
+                                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                                <!-- Modal header -->
+                                                <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                                                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                                        Student: {{ student.first_name}} {{student.last_name }}
+                                                    </h3>
+                                                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="my-modal{{ student.id }}">
+                                                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                                        <span class="sr-only">Close modal</span>
+                                                    </button>
+                                                </div>
+                                                <!-- Modal body -->
+                                                <div class="p-6 space-y-6">
+                                                    <ul >
+                                                        <li>Student Number: <strong>{{student_name}}</strong></li>
+                                                        <li>First Name: <strong>{{student.first_name}}</strong></li>
+                                                        <li>Last Name: <strong>{{student.last_name}}</strong></li>
+                                                        <li>Email: <strong>{{student.email}}</strong></li>
+                                                        <li>Field of Study: <strong>{{student.course}}</strong></li>
+                                                        <li>GPA: <strong>{{student.gpa}}</strong></li>
+                                                                            </ul>
+                                                </div>
+                                                <!-- Modal footer -->
+                                                <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                                                    <p>School Management System</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <a href="#" class="btn p-2 bg-primaryCol text-white">
+                                    <i class="bx bxs-edit"></i>Edit
+                                </a>
+                                <a href="#" class="btn p-2 bg-primaryCol text-white">
+                                    <i class="bx bxs-trash"></i>Delete
+                                </a>
                             </td>
                             </tr>
                             {% endfor %}

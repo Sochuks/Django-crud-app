@@ -1,0 +1,21 @@
+{% block body %}
+
+ <!-- Heading -->
+ <div class="mt-3 text-center">
+    <h3 class="text-lg font-bold text-primaryCol">
+        Student: {{ student.first_name}} {{student.last_name }}
+    </h3>
+</div>
+
+<!-- Modal body -->
+<ul >
+
+    <li>Student Number: <strong>{{object.name}}</strong></li>
+    <li>First Name: <strong>{{object.first_name}}</strong></li>
+    <li>Last Name: <strong>{{object.last_name}}</strong></li>
+    <li>Email: <strong>{{object.email}}</strong></li>
+    <li>Field of Study: <strong>{{object.course}}</strong></li>
+    <li>GPA: <strong>{{object.gpa}}</strong></li>
+</ul>
+
+{% endblock %}
