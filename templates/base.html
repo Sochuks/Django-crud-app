@@ -34,15 +34,15 @@
     <div class="flex w-full bg-primaryCol items-center justify-start py-5 px-6">
   
       <!--logo-->
-      <div class="flex items-center space-x-2 md:space-x-4">
-        <img href="index.html" src="{% static 'img/favicon.ico' %}" alt="">
+      <div href="{% url 'index' %}" class="flex items-center space-x-2 md:space-x-4">
+        <i class='bx bxs-graduation'></i>
         <h2 href="index.html" class="font-medium text-xl text-fiveCol md:text-2xl shadow">Student Records Manager</h2>
       </div>
   
       <!--Desktop Navigation-->
       <nav class="hidden items-center ml-6 pt-2 text-fourCol font-normal md:flex space-x-6">
-        <a class="hover:text-thirdCol transition-all" href="index.html">All student</a>
-        <a class="hover:text-thirdCol transition-all" href="#">Add student</a>
+        <a class="hover:text-thirdCol transition-all" href="{% url 'index' %}"><i class='bx bx-list-ul' ></i>All student</a>
+        <a class="hover:text-thirdCol transition-all" href="{% url 'add' %}"><i class='bx bxs-user-plus'></i>Add student</a>
       </nav>
   
       <!--Button-->

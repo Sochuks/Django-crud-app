@@ -79,7 +79,7 @@
                                                         <li>Email: <strong>{{student.email}}</strong></li>
                                                         <li>Field of Study: <strong>{{student.course}}</strong></li>
                                                         <li>GPA: <strong>{{student.gpa}}</strong></li>
-                                                                            </ul>
+                                                    </ul>
                                                 </div>
                                                 <!-- Modal footer -->
                                                 <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
@@ -91,7 +91,7 @@
                                     
                                 </div>
 
-                                <a href="#" class="btn p-2 bg-primaryCol text-white">
+                                <a href="{% url 'edit' student.id %}" class="btn p-2 bg-primaryCol text-white">
                                     <i class="bx bxs-edit"></i>Edit
                                 </a>
                                 <a href="#" class="btn p-2 bg-primaryCol text-white">
