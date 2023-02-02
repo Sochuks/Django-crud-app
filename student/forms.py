@@ -14,7 +14,7 @@ class studentForm(forms.ModelForm):
                   'gpa': 'GPA'}
 
         widget = {
-            'student_name': forms.NumberInput(attrs={'class':'mb-6 '}), 
+            'student_name': forms.NumberInput(attrs={'class':'mb-6'}), 
             'first_name': forms.TextInput(attrs={'class':'mb-6'}), 
             'last_name':forms.TextInput(attrs={'class':'mb-6'}), 
             'email':forms.EmailInput(attrs={'class':'mb-6'}), 
