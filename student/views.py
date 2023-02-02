@@ -63,3 +63,9 @@ def edit(request, id):
         'form': form
     })         
     
+# Delete record
+def delete(request, id):
+    if request.method == "POST":
+        student = stdnt.objects.get(pk=id)
+        student.delete()
+    return HttpResponseRedirect(reverse('index'))
