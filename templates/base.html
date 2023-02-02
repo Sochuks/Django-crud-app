@@ -23,7 +23,10 @@
         {% tailwind_css %}
     <!-- Flowbite -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
-      
+    <!--DataTables  -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+    <!--Responsive Extension Datatables CSS-->
+	  <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -34,24 +37,24 @@
     <div class="flex w-full bg-primaryCol items-center justify-start py-5 px-6">
   
       <!--logo-->
-      <div href="{% url 'index' %}" class="flex items-center space-x-2 md:space-x-4">
-        <i class='bx bxs-graduation'></i>
-        <h2 href="index.html" class="font-medium text-xl text-fiveCol md:text-2xl shadow">Student Records Manager</h2>
+      <div href="{% url 'index' %}" class="flex items-center space-x-2 md:space-x-0">
+        <i class='bx bxs-graduation text-4xl mt-1 text-fiveCol'></i>
+        <h2 href="index.html" class="font-medium text-xl text-fiveCol md:text-3xl shadow">Student Records Manager</h2>
       </div>
   
       <!--Desktop Navigation-->
       <nav class="hidden items-center ml-6 pt-2 text-fourCol font-normal md:flex space-x-6">
-        <a class="hover:text-thirdCol transition-all" href="{% url 'index' %}"><i class='bx bx-list-ul' ></i>All student</a>
-        <a class="hover:text-thirdCol transition-all" href="{% url 'add' %}"><i class='bx bxs-user-plus'></i>Add student</a>
+        <a class="hover:text-thirdCol transition-all" href="{% url 'index' %}"><i class='bx bx-list-ul text-lg' ></i>All student</a>
+        <a class="hover:text-thirdCol transition-all" href="{% url 'add' %}"><i class='bx bxs-user-plus text-lg'></i>Add student</a>
       </nav>
   
       <!--Button-->
-      <a href="" class="absolute right-5 p-3 px-6 pt-2 text-primaryCol bg-fourCol rounded-lg baseline hover:bg-fiveCol transition-all duration-500 hidden md:block">
+      <a href="" class="absolute right-5 p-3 pt-2 text-primaryCol bg-fourCol rounded-lg baseline hover:bg-fiveCol transition-all duration-500 hidden md:block">
         Add New
       </a>
   
       <!--Hamburger Icon-->
-      <button id="menu-icon" class="hamburger block mt-4 md:hidden focus:outline-none">
+      <button id="menu-icon" class="absolute right-4 mb-1 hamburger block mt-4 md:hidden focus:outline-none">
         <span class="hamburger-top"></span>
         <span class="hamburger-middle"></span>
         <span class="hamburger-bottom"></span>
@@ -77,7 +80,7 @@
       </div>
 
 
-      <footer class="bg-blue-800 py-7">
+      <footer class="w-full bg-blue-800 py-7 fixed bottom-0">
 
         <div class="flex justify-center items-center text-white">
             Copyright &copy; 2022, All right reserved
@@ -86,10 +89,14 @@
       </footer>
 
 
+          <!--jQuery-->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
           <!--JavScript Arena-->
           <script src="{% static 'js/app.js' %}" type="text/javascript"></script>
           <!-- flowbite -->
           <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
-
+          <!-- DataTables -->
+          <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+          <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 </body>
 </html>
